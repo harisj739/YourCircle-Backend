@@ -16,8 +16,6 @@ public interface UserRepository extends
     @Query("select u.userName, u.firstName, u.lastName, u.city, u.state, u.country from User u where u.firstName like :firstName and u.lastName=:lastName order by u.firstName, u.lastName asc")
     List<User> findByFirstAndLastName(String firstName, String lastName);
 
-    User findByEmail(String email);
-
     @Query("select u.userName, u.firstName, u.lastName, u.city, u.state, u.country from User u where u.city like :city and u.state=:state and u.country=:country order by u.firstName, u.lastName asc")
     List<User> findByCityAndStateAndCountry(String city, String state, String country);
 }
