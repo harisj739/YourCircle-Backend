@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000") // TODO: Change the Cross Origin link to the website link!
+@CrossOrigin(origins = "https://circle-weld-iota.vercel.app")
 public class CircleController {
 
     @Autowired
