@@ -24,7 +24,7 @@ public class ItemController {
     @Autowired
     ItemRepository itemRepository;
 
-    @GetMapping("/youritems")
+    @GetMapping("/youritems/user")
     public List<ItemDTO> findUserItems(@RequestParam ("userId") int userId) {
 
         User user = userRepository.findById(userId).orElse(null);
@@ -39,7 +39,7 @@ public class ItemController {
         return itemDTO_list;
     }
 
-    @GetMapping("/youritems")
+    @GetMapping("/youritems/circle")
     public List<ItemDTO> findItemByCircle(@RequestParam ("circleId") int circleId) {
 
         Circle circle = circleRepository.findById(circleId).orElse(null);
@@ -54,7 +54,7 @@ public class ItemController {
         return itemDTO_list;
     }
 
-    @GetMapping("/youritems")
+    @GetMapping("/youritems/name")
     public List<ItemDTO> findItemByItemName(@RequestParam ("itemName") String itemName) {
 
         List<Item> items = itemRepository.findByItemName(itemName);
@@ -65,7 +65,7 @@ public class ItemController {
         return itemDTO_list;
     }
 
-    @GetMapping("/youritems")
+    @GetMapping("/youritems/type")
     public List<ItemDTO> findItemByItemType(@RequestParam ("itemType") String itemType) {
 
         List<Item> items = itemRepository.findByItemType(itemType);
@@ -76,7 +76,7 @@ public class ItemController {
         return itemDTO_list;
     }
 
-    @GetMapping("/youritems")
+    @GetMapping("/youritems/condition")
     public List<ItemDTO> findItemByItemCondition(@RequestParam ("itemCondition") String itemCondition) {
 
         List<Item> items = itemRepository.findByItemCondition(itemCondition);
@@ -87,7 +87,7 @@ public class ItemController {
         return itemDTO_list;
     }
 
-    @GetMapping("/youritems")
+    @GetMapping("/youritems/requested")
     public List<ItemDTO> findItemByRequested(@RequestParam ("requested") int requested) {
 
         List<Item> items = itemRepository.findByRequested(requested);
@@ -98,7 +98,7 @@ public class ItemController {
         return itemDTO_list;
     }
 
-    @GetMapping("/youritems")
+    @GetMapping("/youritems/date")
     public List<ItemDTO> findItemByDateRange(@RequestParam ("sendDate") Date sendDate, @RequestParam ("receiveDate") Date receiveDate) {
 
         List<Item> items = itemRepository.findByDateRange(sendDate, receiveDate);

@@ -45,7 +45,7 @@ public class CircleUserController {
         return circleUserDTO_list;
     }
 
-    @PutMapping("/yourcircle")
+    @PutMapping("/yourcircle/user")
     public CircleUserDTO addUserToCircle(@RequestBody CircleUserDTO circleUserDTO) {
         User user = userRepository.findById(circleUserDTO.userInCircle()).orElse(null);
 
@@ -68,7 +68,7 @@ public class CircleUserController {
         return new CircleUserDTO(newCircleUser.getCircle().getCircleId(), newCircleUser.getUser().getUserId(), newCircleUser.getUser().getUserName(), newCircleUser.getUser().getFirstName(), newCircleUser.getUser().getLastName(), newCircleUser.getCircle().getCircleName(), newCircleUser.getCircle().getCircleDesc());
     }
 
-    @DeleteMapping("/yourCircle/{userName}")
+    @DeleteMapping("/yourCircle/user/{userName}")
     public void  removeUserFromCircle(@PathVariable("userName") String userName) {
         List<CircleUser> deleteUser = circleUserRepository.findByUserName(userName);
 

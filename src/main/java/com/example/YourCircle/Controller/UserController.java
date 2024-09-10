@@ -32,7 +32,7 @@ public class UserController {
         return userDTO_list;
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user/username")
     public List<UserDTO> findUserByUserName(@RequestParam("userName") String userName) {
 
         List<User> users = userRepository.findByUserName(userName);
@@ -43,7 +43,7 @@ public class UserController {
         return userDTO_list;
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user/name")
     public List<UserDTO> findUserByFullName(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
 
         List<User> users = userRepository.findByFirstAndLastName(firstName, lastName);
@@ -54,7 +54,7 @@ public class UserController {
         return userDTO_list;
     }
 
-    @GetMapping("/user")
+    @GetMapping("/user/location")
     public List<UserDTO> findUserByCityStateAndCountry(@RequestParam("city") String city, @RequestParam("state") String state, @RequestParam("country") String country) {
 
         List<User> users = userRepository.findByCityAndStateAndCountry(city, state, country);
