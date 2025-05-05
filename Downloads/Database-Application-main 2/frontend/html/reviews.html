@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Customer Reviews</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="reserve.html">Make a Reservation</a></li>
+                <li><a href="restaurants.html">Restaurants</a></li>
+                <li><a href="reviews.html">Reviews</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Leave a Review</h2>
+            <form action="/submit-review" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="review">Review:</label>
+                <textarea id="review" name="review" rows="5" required></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+        <section>
+            <h2>Customer Feedback</h2>
+            <article>
+                <p>"Great service and ambiance!" - John D.</p>
+            </article>
+            <article>
+                <p>"Loved the food and easy reservations!" - Sarah W.</p>
+            </article>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Restaurant Reservation System. All rights reserved.</p>
+    </footer>
+</body>
+</html>
